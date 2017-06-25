@@ -1,0 +1,25 @@
+<div id="viewer_div" style="border: 1px solid gray; height: 900px; width: 750px; position: relative; overflow: hidden;"></div>
+<script type="text/javascript">
+viewer = new DigiViewer('viewer_div', {'useAnchors': true});
+viewer.addToNavbar( DV_NavSeparatorSpace() );
+pager = new DV_Pager();
+viewer.addToNavbar( pager );
+viewer.addToNavbar( DV_NavSeparatorSpace() );
+viewer.addToNavbar( DV_NavSeparatorLine() );
+viewer.addToNavbar( DV_NavSeparatorSpace() );
+zoomer = new DV_Zoomer({'standard':50, 'steps':[50,60,70,80,90,100,110,120], 'wheelZoom': true});
+viewer.addToNavbar( zoomer );
+thumbs = new DV_Thumbs(100);
+page0 = new Page('0', {'href': '/mbarchiv/1938/1938-08-p01.jpg', 'height': 1843, 'width': 1200, 'pageNum': 1});
+page1 = new Page('1', {'href': '/mbarchiv/1938/1938-08-p02.jpg', 'height': 1882, 'width': 1200, 'pageNum': 2});
+viewer.addPage(page0);
+viewer.addPage(page1);
+thumbs.addThumb(page0, '/mbarchiv/1938/thumbs/1938-08-p01.jpg');
+thumbs.addThumb(page1, '/mbarchiv/1938/thumbs/1938-08-p02.jpg');
+viewer.addToSidebar(thumbs);
+viewer.show();
+pager.connect(viewer);
+zoomer.connect(viewer);
+thumbs.connect(viewer);
+viewer.loadPage(page0);
+</script>

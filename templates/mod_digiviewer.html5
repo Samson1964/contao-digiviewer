@@ -1,0 +1,51 @@
+<?php
+	$GLOBALS['TL_CSS'][] = 'system/modules/digiviewer/library/digiviewer.css';
+	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/digiviewer/library/prototype.js';
+	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/digiviewer/library/digiviewer.js';
+?>
+
+<div class="<?php echo $this->class; ?> dewis block"<?php echo $this->cssID; ?> style="<?php if ($this->margin): ?><?php echo trim($this->margin); ?><?php endif; ?> <?php if ($this->style): ?><?php echo $this->style; ?><?php endif; ?>">
+
+	<?php if ($this->headline): ?>
+		<<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+	<?php endif ?>
+
+	<div id="viewer_div_<?= $this->id ?>" style="border: 1px solid gray; position: relative; overflow: hidden; width:<?= $this->view_width ?>px; height:<?= $this->view_height ?>px;"></div>
+	
+	<script type="text/javascript">
+
+		viewer = new DigiViewer('viewer_div_<?= $this->id ?>', {'useAnchors': true});
+		viewer.addToNavbar( DV_NavSeparatorSpace() );
+		pager = new DV_Pager();
+		viewer.addToNavbar( pager );
+		viewer.addToNavbar( DV_NavSeparatorSpace() );
+		viewer.addToNavbar( DV_NavSeparatorLine() );
+		viewer.addToNavbar( DV_NavSeparatorSpace() );
+		zoomer = new DV_Zoomer({'standard':<?= $this->zoom_default ?>, 'steps':[<?= $this->zoom_grades ?>], 'wheelZoom': true});
+		viewer.addToNavbar( zoomer );
+		thumbs = new DV_Thumbs(<?= $this->thumb_width ?>);
+
+		<?php foreach($this->daten as $record): ?>
+			page<?= $record['index'] ?> = new Page('<?= $record['index'] ?>', {'href': '<?= $record['image'] ?>', 'height': 1843, 'width': 1200, 'pageNum': <?= $record['page'] ?>});
+			viewer.addPage(page<?= $record['index'] ?>);
+			thumbs.addThumb(page<?= $record['index'] ?>, '<?= $record['thumbnail'] ?>');
+		<?php endforeach ?>
+
+		viewer.addToSidebar(thumbs);
+		viewer.show();
+		pager.connect(viewer);
+		zoomer.connect(viewer);
+		thumbs.connect(viewer);
+		viewer.loadPage(page0);
+
+	</script>
+
+	<div class="digiviewer_ocr">
+		<ul>
+		<?php foreach($this->daten as $record): ?>
+			<li><b><?= $record['title'] ?></b> <?= $record['text'] ?></li>
+		<?php endforeach ?>
+		</ul>
+	</div>
+		
+</div>

@@ -1,0 +1,13 @@
+#top_div {background:#F5F5EE;color:#333333;font-size:12px}
+
+#link_cont {float:left;width:150px;text-align:center;padding-top:20px}
+#logo {margin-bottom:10px}
+
+#content_cont {margin-left:150px}
+#content {background:#fff;padding:20px;min-height:300px}
+#content a {color:#535378;text-decoration:none}
+#content a:hover {text-decoration:underline}
+#content a:focus {outline:none;text-decoration:underline}
+
+#shadow_top {margin-top:30px;height:5px;background-image: url('/plugins/DigiViewer/dv/images/shadow-top.gif');background-repeat:repeat-x}
+#shadow_bottom {height:11px;background-image: url('/plugins/DigiViewer/dv/images/shadow-bottom.gif');background-repeat:repeat-x}

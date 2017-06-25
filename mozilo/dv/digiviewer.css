@@ -1,0 +1,55 @@
+#dv_root {position:absolute;margin:0px;padding:0px;overflow:hidden;height:100%;width:100%;background:#ddd;font-family:verdana,helvetica,arial,sans-serif;font-size: 12px}
+#dv_navbar {position:absolute;left:0px;top:0px;height:30px;width:100%;background:#fff;z-index:3;border-bottom:1px solid #bbb}
+#dv_sidebar {position:absolute;left:0px;top:30px;bottom:0px;width:21px;border-top:1px solid #bbb;background:#fff;z-index:3;border-right:1px solid #bbb}
+#dv_page_cont {border:none;float:left;margin:0px;padding:0px}
+#startup {width:100%;height:100%;background: url(/plugins/DigiViewer/dv/images/loading.gif) no-repeat 50%}
+
+
+
+.sep_left {height:30px;float:left;text-align:center;border:none}
+.sep_right {height:30px;float:right;text-align:center;border:none}
+.sep_left .line {border-left:1px solid #bbb;height:24px;margin-top:3px;float:left}
+.sep_right .line {border-left:1px solid #bbb;height:24px;margin-top:3px;float:left}
+
+/* DV_Pager */
+#dv_pager {margin-top:5px}
+#dv_pager a img {border:none;margin-left:1px;margin-right:1px;opacity:0.6}
+#dv_pager a:hover img {opacity:1}
+#dv_pager span {vertical-align:top;margin-left:1px;margin-right:1px}
+
+/* DV_Rotator */
+#dv_rotator {margin-top:5px}
+#dv_rotator a img {border:none;margin-left:1px;margin-right:1px;opacity:0.6}
+#dv_rotator a:hover img {opacity:1}
+#dv_rotator img {margin-left:1px;margin-right:1px}
+
+/* DV_Zoomer */
+#dv_zoomer {margin-top:5px}
+#dv_zoomer a img {border:none;margin-left:1px;margin-right:1px;opacity:0.6}
+#dv_zoomer a:hover img {opacity:1}
+#dv_zoomer select {height:18px;margin-left:1px;margin-right:1px;vertical-align:top;font-size:12px}
+
+/* page element */
+.img_page {border:1px solid gray}
+
+/* sidebar elements */
+.link_side {display:block;padding-top:7px;padding-bottom:7px;padding-left:3px;padding-right:3px;margin-bottom:1px}
+.link_side img {opacity:0.6}
+.link_side:hover img {opacity:1}
+
+/* slidWindow for sidebar element */
+.slideWindow {position:absolute;bottom:0px;top:31px;left:21px;overflow:auto;background:#fff;z-index:2;border-right:1px solid #bbb}
+
+/*
+custom stuff
+*/
+
+/* helper content */
+.testdiv {padding:10px;background:#fff;font-size:11px}
+.testdiv h2 {color:#5078A0;font-family:verdana,helvetica,arial,sans-serif;font-size:12px;line-height:125%}
+
+/* thumbs content */
+.dv_thumb_link {text-decoration:none;padding-top:8px;padding-bottom:5px;display:block;margin-left:auto;margin-right:auto; text-align:center;background:#fff;color: #5884B0}
+.dv_thumb_link:hover {color: #000038}
+.dv_thumb_link img {width:71px;height:100px;border:1px solid gray;vertical-align:bottom}
+.dv_thumb_link span {font-size:11px}
